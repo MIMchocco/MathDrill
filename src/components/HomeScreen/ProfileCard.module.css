@@ -1,0 +1,67 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-3);
+  background: var(--color-surface);
+  border: 3px solid transparent;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  min-height: 100px;
+  transition: border-color 0.15s, transform 0.1s;
+  position: relative;
+}
+
+.card:active {
+  transform: scale(0.96);
+}
+
+.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.2);
+}
+
+.avatar {
+  font-size: var(--text-2xl);
+}
+
+.name {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--color-text);
+  text-align: center;
+  word-break: break-all;
+}
+
+.points {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: rgba(255, 112, 67, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.card:hover .deleteBtn {
+  opacity: 1;
+}

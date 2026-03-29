@@ -1,0 +1,277 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: var(--space-4);
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.animalStage {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.hero {
+  font-size: 100px;
+  line-height: 1;
+  display: block;
+  will-change: transform;
+  position: relative;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  font-size: 28px;
+  will-change: transform, opacity;
+}
+
+.reportMsg {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-secondary-dark);
+  background: #e3f2fd;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
+  margin-bottom: var(--space-5);
+  line-height: 1.6;
+}
+
+.nextBtn {
+  background: var(--color-primary);
+  color: white;
+  font-size: var(--text-xl);
+  font-weight: 900;
+  padding: var(--space-5) var(--space-12);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.1s;
+}
+
+.nextBtn:active {
+  transform: scale(0.96);
+}
+
+/* ============================================================
+   Hero animations (one per animal)
+   ============================================================ */
+
+/* 0 パンダ — bounce */
+.hero-bounce {
+  animation: heroBounce 0.6s ease-in-out infinite alternate;
+}
+@keyframes heroBounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-30px); }
+}
+
+/* 1 ネコ — spin */
+.hero-spin {
+  animation: heroSpin 1.2s linear infinite;
+}
+@keyframes heroSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 2 イヌ — shake */
+.hero-shake {
+  animation: heroShake 0.3s ease-in-out infinite;
+}
+@keyframes heroShake {
+  0%   { transform: rotate(-8deg); }
+  50%  { transform: rotate(8deg); }
+  100% { transform: rotate(-8deg); }
+}
+
+/* 3 ウサギ — hop */
+.hero-hop {
+  animation: heroHop 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes heroHop {
+  0%   { transform: translateY(0) scaleY(1); }
+  40%  { transform: translateY(-40px) scaleY(1.1); }
+  60%  { transform: translateY(-40px) scaleY(1.1); }
+  80%  { transform: translateY(0) scaleY(0.9); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+/* 4 ペンギン — waddle */
+.hero-waddle {
+  animation: heroWaddle 0.5s ease-in-out infinite;
+}
+@keyframes heroWaddle {
+  0%   { transform: rotate(-10deg) translateX(-8px); }
+  50%  { transform: rotate(10deg) translateX(8px); }
+  100% { transform: rotate(-10deg) translateX(-8px); }
+}
+
+/* 5 カエル — jump */
+.hero-jump {
+  animation: heroJump 0.8s ease-in-out infinite;
+}
+@keyframes heroJump {
+  0%   { transform: scaleX(1.1) scaleY(0.85); }
+  30%  { transform: translateY(-50px) scaleX(0.9) scaleY(1.1); }
+  60%  { transform: translateY(-50px) scaleX(0.9) scaleY(1.1); }
+  85%  { transform: translateY(0) scaleX(1.15) scaleY(0.8); }
+  100% { transform: scaleX(1.1) scaleY(0.85); }
+}
+
+/* 6 クマ — pulse */
+.hero-pulse {
+  animation: heroPulse 0.8s ease-in-out infinite;
+}
+@keyframes heroPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* 7 ヒヨコ — floatUp */
+.hero-floatUp {
+  animation: heroFloat 1.5s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* 8 キツネ — cartwheel */
+.hero-cartwheel {
+  animation: heroCartwheel 1.2s linear infinite;
+}
+@keyframes heroCartwheel {
+  0%   { transform: rotate(0deg) translateX(-40px); }
+  100% { transform: rotate(360deg) translateX(40px); }
+}
+
+/* 9 ゾウ — sway */
+.hero-sway {
+  animation: heroSway 1s ease-in-out infinite;
+}
+@keyframes heroSway {
+  0%   { transform: rotate(-5deg); }
+  50%  { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+/* ============================================================
+   Particle animations
+   ============================================================ */
+
+.particle-sway {
+  animation: particleSway 1.2s ease-in-out infinite alternate;
+}
+@keyframes particleSway {
+  from { transform: rotate(-15deg); }
+  to   { transform: rotate(15deg); }
+}
+
+.particle-twinkle {
+  animation: particleTwinkle 0.6s ease-in-out infinite alternate;
+}
+@keyframes particleTwinkle {
+  from { transform: scale(0.6); opacity: 0.5; }
+  to   { transform: scale(1.3); opacity: 1; }
+}
+
+.particle-fall {
+  animation: particleFall 1.5s linear infinite;
+}
+@keyframes particleFall {
+  from { transform: translateY(-60px); opacity: 0; }
+  30%  { opacity: 1; }
+  to   { transform: translateY(160px); opacity: 0; }
+}
+
+.particle-float {
+  animation: particleFloat 1.8s ease-in-out infinite alternate;
+}
+@keyframes particleFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-20px); }
+}
+
+.particle-snow {
+  animation: particleSnow 2s linear infinite;
+}
+@keyframes particleSnow {
+  from { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+  20%  { opacity: 1; }
+  to   { transform: translateY(180px) rotate(360deg); opacity: 0; }
+}
+
+.particle-drip {
+  animation: particleDrip 1s ease-in infinite;
+}
+@keyframes particleDrip {
+  from { transform: translateY(-20px); opacity: 1; }
+  to   { transform: translateY(60px); opacity: 0; }
+}
+
+.particle-orbit {
+  animation: particleOrbit 2s linear infinite;
+}
+@keyframes particleOrbit {
+  from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
+
+.particle-scatter {
+  animation: particleScatter 1s ease-out infinite alternate;
+}
+@keyframes particleScatter {
+  from { transform: scale(0.8) rotate(0deg); opacity: 0.7; }
+  to   { transform: scale(1.4) rotate(30deg); opacity: 1; }
+}
+
+.particle-swirl {
+  animation: particleSwirl 1.5s linear infinite;
+}
+@keyframes particleSwirl {
+  from { transform: rotate(0deg) translateX(50px); }
+  to   { transform: rotate(360deg) translateX(50px); }
+}
+
+.particle-rise {
+  animation: particleRise 1.5s ease-out infinite;
+}
+@keyframes particleRise {
+  from { transform: translateY(60px); opacity: 0; }
+  50%  { opacity: 1; }
+  to   { transform: translateY(-60px); opacity: 0; }
+}

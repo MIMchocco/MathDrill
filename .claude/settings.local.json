@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm /Users/tagiri/Documents/Claude/calculator/src/App.css /Users/tagiri/Documents/Claude/calculator/src/index.css /Users/tagiri/Documents/Claude/calculator/src/assets/react.svg /Users/tagiri/Documents/Claude/calculator/public/vite.svg)",
+      "Bash(mkdir -p /Users/tagiri/Documents/Claude/calculator/src/styles /Users/tagiri/Documents/Claude/calculator/src/context /Users/tagiri/Documents/Claude/calculator/src/hooks /Users/tagiri/Documents/Claude/calculator/src/logic /Users/tagiri/Documents/Claude/calculator/src/components)"
+    ]
+  }
+}
