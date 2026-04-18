@@ -35,6 +35,9 @@
 .badge-level1 { background: var(--color-level1); }
 .badge-level2 { background: var(--color-level2); }
 .badge-level3 { background: var(--color-level3); }
+.badge-level4 { background: #4f7cff; }
+.badge-level5 { background: #2f9e44; }
+.badge-mixedEasy { background: #ff7043; }
 .badge-mixed  { background: var(--color-mixed); }
 
 /* Points bar */

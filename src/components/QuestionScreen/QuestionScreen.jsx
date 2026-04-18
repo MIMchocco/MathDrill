@@ -7,10 +7,13 @@ import styles from './QuestionScreen.module.css';
 const GRADE_DURATION = 900;
 
 const LEVEL_LABELS = {
-  level1: 'レベル１',
-  level2: 'レベル２',
-  level3: 'レベル３',
-  mixed: 'ミックス',
+  level1: 'ジャンル１',
+  level2: 'ジャンル２',
+  level3: 'ジャンル３',
+  level4: 'ジャンル４',
+  level5: 'ジャンル５',
+  mixedEasy: 'ミックス（かんたん）',
+  mixed: 'ミックス（ぜんぶ）',
 };
 
 function PointsBar({ points }) {
