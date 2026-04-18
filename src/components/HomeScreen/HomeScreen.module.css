@@ -125,6 +125,9 @@
 .level1 { background: var(--color-level1); }
 .level2 { background: var(--color-level2); }
 .level3 { background: var(--color-level3); }
+.level4 { background: #4f7cff; }
+.level5 { background: #2f9e44; }
+.mixedEasy { background: #ff7043; }
 .mixed  { background: var(--color-mixed); }
 
 .mixedBtn {

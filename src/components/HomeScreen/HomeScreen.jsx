@@ -87,22 +87,36 @@ function CourseSelect({ userId, onClose }) {
       <div className={styles.courseGrid}>
         <button className={`${styles.courseBtn} ${styles.level1}`} onClick={() => startCourse('level1')}>
           <span className={styles.courseBtnEmoji}>🔟</span>
-          <span>レベル１</span>
+          <span>ジャンル１</span>
           <span style={{ fontSize: '11px', opacity: 0.85 }}>10のなかま</span>
         </button>
         <button className={`${styles.courseBtn} ${styles.level2}`} onClick={() => startCourse('level2')}>
           <span className={styles.courseBtnEmoji}>🔢</span>
-          <span>レベル２</span>
+          <span>ジャンル２</span>
           <span style={{ fontSize: '11px', opacity: 0.85 }}>たしざん・ひきざん</span>
         </button>
         <button className={`${styles.courseBtn} ${styles.level3}`} onClick={() => startCourse('level3')}>
           <span className={styles.courseBtnEmoji}>✖️</span>
-          <span>レベル３</span>
+          <span>ジャンル３</span>
           <span style={{ fontSize: '11px', opacity: 0.85 }}>九九</span>
+        </button>
+        <button className={`${styles.courseBtn} ${styles.level4}`} onClick={() => startCourse('level4')}>
+          <span className={styles.courseBtnEmoji}>➕</span>
+          <span>ジャンル４</span>
+          <span style={{ fontSize: '11px', opacity: 0.85 }}>1けた くりあがり/さがりなし</span>
+        </button>
+        <button className={`${styles.courseBtn} ${styles.level5}`} onClick={() => startCourse('level5')}>
+          <span className={styles.courseBtnEmoji}>🧮</span>
+          <span>ジャンル５</span>
+          <span style={{ fontSize: '11px', opacity: 0.85 }}>2けた くりあがり/さがりなし</span>
+        </button>
+        <button className={`${styles.courseBtn} ${styles.mixedEasy} ${styles.mixedBtn}`} onClick={() => startCourse('mixedEasy')}>
+          <span className={styles.courseBtnEmoji}>🎯</span>
+          <span>ミックス（かんたん）</span>
         </button>
         <button className={`${styles.courseBtn} ${styles.mixed} ${styles.mixedBtn}`} onClick={() => startCourse('mixed')}>
           <span className={styles.courseBtnEmoji}>🎲</span>
-          <span>ミックス（全レベル）</span>
+          <span>ミックス（ぜんぶ）</span>
         </button>
       </div>
       <button className={styles.cancelBtn} onClick={onClose}>← もどる</button>

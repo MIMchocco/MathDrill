@@ -89,6 +89,63 @@ export function genLevel2() {
   }
 }
 
+export function genLevel4() {
+  const useAdd = Math.random() < 0.5;
+
+  if (useAdd) {
+    const a = randInt(0, 9);
+    const b = randInt(0, 9 - a);
+    return {
+      level: 4,
+      slots: { a, op: '+', b, result: null },
+      blankTarget: 'result',
+      correctAnswer: a + b,
+    };
+  }
+
+  const a = randInt(0, 9);
+  const b = randInt(0, a);
+  return {
+    level: 4,
+    slots: { a, op: '-', b, result: null },
+    blankTarget: 'result',
+    correctAnswer: a - b,
+  };
+}
+
+export function genLevel5() {
+  const useAdd = Math.random() < 0.5;
+
+  if (useAdd) {
+    const aTens = randInt(1, 8);
+    const bTens = randInt(1, 9 - aTens);
+    const aOnes = randInt(0, 9);
+    const bOnes = randInt(0, 9 - aOnes);
+    const a = aTens * 10 + aOnes;
+    const b = bTens * 10 + bOnes;
+    return {
+      level: 5,
+      slots: { a, op: '+', b, result: null },
+      blankTarget: 'result',
+      correctAnswer: a + b,
+    };
+  }
+
+  const aTens = randInt(1, 9);
+  const bTens = randInt(0, aTens);
+  const aOnes = randInt(0, 9);
+  const bOnes = randInt(0, aOnes);
+  const a = aTens * 10 + aOnes;
+  const b = bTens * 10 + bOnes;
+
+  return {
+    level: 5,
+    slots: { a, op: '-', b, result: null },
+    blankTarget: 'result',
+    correctAnswer: a - b,
+  };
+}
+
 // Tables 2-9, weighted: 6-9 appear 2x
 const TABLE_POOL = [2, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9];
 
@@ -111,10 +168,19 @@ export function genLevel3() {
 }
 
 export function genMixed() {
-  const level = randInt(1, 3);
+  const level = randInt(1, 5);
   if (level === 1) return genLevel1();
   if (level === 2) return genLevel2();
-  return genLevel3();
+  if (level === 3) return genLevel3();
+  if (level === 4) return genLevel4();
+  return genLevel5();
+}
+
+export function genMixedEasy() {
+  const level = pick([1, 4, 5]);
+  if (level === 1) return genLevel1();
+  if (level === 4) return genLevel4();
+  return genLevel5();
 }
 
 export function genByMode(courseMode) {
@@ -122,6 +188,9 @@ export function genByMode(courseMode) {
     case 'level1': return genLevel1();
     case 'level2': return genLevel2();
     case 'level3': return genLevel3();
+    case 'level4': return genLevel4();
+    case 'level5': return genLevel5();
+    case 'mixedEasy': return genMixedEasy();
     case 'mixed':  return genMixed();
     default:       return genLevel1();
   }
